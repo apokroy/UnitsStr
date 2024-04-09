@@ -125,7 +125,7 @@ begin
       '0'..'9':
         begin
           Value := 0;
-          while (I <= L) and CharInSet(S[I], ['0'..'9']) do
+          while (I <= L) and (S[I] >= '0') and (S[I] <= '9') do
           begin
             Value := Value * 10 + Ord(S[I]) - Ord('0');
             Inc(I);
@@ -135,14 +135,17 @@ begin
             Inc(I);
 
           B := I;
-          while (I <= L) and CharInSet(S[I], ['a'..'z', 'A'..'Z']) do
+          while (I <= L) and (S[I] > ' ') do
             Inc(I);
 
           if B = I then // No units specified, must be last
           begin
             while I <= L do
+            begin
               if S[I] > #32 then
                 Exit(False);
+              Inc(I);
+            end;
             Interval := Interval + Value;
             Exit(True);
           end;
