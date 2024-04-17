@@ -25,19 +25,19 @@ var
 implementation
 
 uses
-  IntervalStr;
+  UnitsStr;
 
 {$R *.dfm}
 
 procedure TForm7.Edit1Change(Sender: TObject);
 var
-  I: UInt64;
+  T: TMilliseconds;
 begin
-  if TryIntervalStrToMSec(Edit1.Text, I, TIntervalUnits.Default) then
+  if T.TryParse(Edit1.Text) then
   begin
-    Label1.Caption := I.ToString;
-    Label2.Caption := MSecToIntervalStr(I, TIntervalUnits.Default);
-    Label3.Caption := IntToStr(IntervalStrToMSec(Label2.Caption));
+    Label1.Caption := UIntToStr(T);
+    Label2.Caption := T.ToString;
+    Label3.Caption := UIntToStr(TMilliseconds.Parse(Label2.Caption));
   end
   else
     Label1.Caption := 'Error';

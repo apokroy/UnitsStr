@@ -105,7 +105,7 @@
             <Form>Form7</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\IntervalStr.pas"/>
+        <DCCReference Include="..\UnitsStr.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -28,7 +28,7 @@ object Form7: TForm7
   object Label3: TLabel
     Left = 32
     Top = 125
-    Width = 41
+    Width = 5
     Height = 15
     Caption = '-'
   end

@@ -3,7 +3,7 @@ program Demo;
 uses
   Vcl.Forms,
   Main in 'Main.pas' {Form7},
-  IntervalStr in '..\IntervalStr.pas';
+  UnitsStr in '..\UnitsStr.pas';
 
 {$R *.res}
 
