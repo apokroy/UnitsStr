@@ -6,11 +6,15 @@ Allows you to represent values like this:
 etc...
 
 ### Sample
-```
+```Pascal
 var M := TMilliseconds.Parse('2 hours');
 
 if TMilliseconds.TryParse(Config.ReadString('Timeout'), M) then
   Connection.DefaultTimeout := M;
+
+//Localization
+TMilliseconds.TUnits.Defaults.Add('小时', SecsPerHour * MSecsPerSec, True {Use by default});
+TMilliseconds.TUnits.Defaults.Add('ч', SecsPerHour * MSecsPerSec);
 ```
-where TMilliseconds declared as `TMilliseconds = type UInt64;`
+type TMilliseconds declared as `TMilliseconds = type UInt64;`
 
